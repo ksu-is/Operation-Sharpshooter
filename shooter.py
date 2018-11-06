@@ -25,11 +25,16 @@ led.off()
 
 #identify who won via pin assignment
 def pressed(button):
-    if button.pin.number == 14:
-        print(left_name + ' won the game')
-    else:
-        print(right_name + ' won the game')
-
+    i=0
+    left_wins=[]
+    right_wins=[]
+    while i < 6:
+        if button.pin.number == 14:
+            left_wins.append(i)
+            print(left_name + ' won the game')
+        else:
+            right_wins.append(i)
+            print(right_name + ' won the game')
     
 
 #pressed button will call pressed(button) function to determine who won
