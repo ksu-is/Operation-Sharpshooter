@@ -29,13 +29,13 @@ def pressed(button):
         print(left_name + ' won the game')
     else:
         print(right_name + ' won the game')
-    sys.exit()
+
+    
 
 #pressed button will call pressed(button) function to determine who won
 right_button.when_pressed=pressed
 left_button.when_pressed=pressed
 
-#put the game into a loop (remove `exit()`) so that the LED comes on again
 #add scores for both players that accumulate over a number of rounds, and displays the players' total scores
 #add in a timer, to work out how long it took the players to press the button after the LED turned off
 
