@@ -4,9 +4,10 @@ TASKS
 2) Create README.md - Drew: DONE
 3) Create projectroadmap.md - Brianna: DONE
 4) Add comments to base code and evaluate base code - Brianna: DONE
-5) Add loop to code - Drew: IN PROGRESS
-6) Add scores - Brianna: IN PROGRESS
-7) Add timer to evaluate reaction time - Drew: IN PROGRESS
-8) Construct hardware according to assigned pins in code - Drew: IN PROGRESS
-9) Test code for proper application while running - Brianna: IN PROGRESS
-10) Correct any bugs and/or add improvements to code as necessary - Brianna: IN PROGRESS
+5) Add loop to code - Brianna: DONE
+6) Add scores - Brianna: DONE
+7) Marketing powerpoint - Drew: DONE
+8) Add timer to evaluate reaction time - Drew: IN PROGRESS
+9) Construct hardware according to assigned pins in code - Drew: IN PROGRESS
+10) Test code for proper application while running - Brianna: IN PROGRESS
+11) Correct any bugs and/or add improvements to code as necessary - Brianna: IN PROGRESS
