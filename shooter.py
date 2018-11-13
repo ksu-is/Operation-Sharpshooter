@@ -11,8 +11,8 @@ right_button = Button(15)
 left_button = Button(14)
 
 #assign player variables
-left_name = input('left player name is ')
-right_name = input('right player name is ')
+left_name = input('left player name is: ')
+right_name = input('right player name is: ')
 
 #turn on LED
 led.on()
@@ -25,22 +25,29 @@ led.off()
 
 #identify who won via pin assignment
 def pressed(button):
-    i=0
-    left_wins=[]
-    right_wins=[]
-    while i < 6:
+    left_win=0
+    right_win=0
+#displays round winner and adds cumulative scores
+    while left_win or right_win < 3:
         if button.pin.number == 14:
-            left_wins.append(i)
-            print(left_name + ' won the game')
+            left_win += 1
+            print(left_name + ' won the round!\nReady for next round?')
+            led.on()
         else:
-            right_wins.append(i)
-            print(right_name + ' won the game')
-    
+            right_win += 1
+            print(right_name + ' won the round!\nReady for next round?')
+            led.on()
+#displays the players' total scores and ultimate
+    if left_win or right_win == 3:
+        if left_win > right_win:
+            print(left_name + "'s score is: " + left_win + "\n" + right_name + "'s score is: " + right_win + "\nThe winner is" + left_name + "!")
+        else right_win > left_win:
+            print(left_name + "'s score is: " + left_win + "\n" + right_name + "'s score is: " + right_win + "\nThe winner is" + right_name + "!")
+    sys.exit()
+    exit()
 
 #pressed button will call pressed(button) function to determine who won
 right_button.when_pressed=pressed
 left_button.when_pressed=pressed
 
-#add scores for both players that accumulate over a number of rounds, and displays the players' total scores
 #add in a timer, to work out how long it took the players to press the button after the LED turned off
-
