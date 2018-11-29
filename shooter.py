@@ -41,7 +41,7 @@ def pressed(button):
     if left_win or right_win == 3:
         if left_win > right_win:
             print(left_name + "'s score is: " + left_win + "\n" + right_name + "'s score is: " + right_win + "\nThe winner is" + left_name + "!")
-        else right_win > left_win:
+        else:
             print(left_name + "'s score is: " + left_win + "\n" + right_name + "'s score is: " + right_win + "\nThe winner is" + right_name + "!")
     sys.exit()
     exit()
