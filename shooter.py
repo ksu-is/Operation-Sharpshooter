@@ -1,5 +1,4 @@
 #import libraries/modules
-python
 from gpiozero import LED, Button
 from time import sleep
 from random import uniform
@@ -12,8 +11,8 @@ right_button = Button(15)
 left_button = Button(14)
 
 #assign player variables
-left_name = input('left player name is: ')
-right_name = input('right player name is: ')
+left_name = input('Yellow Gunslingers name is: ')
+right_name = input('Blue Gunslingers name is: ')
 
 #turn on LED
 led.on()
@@ -32,11 +31,11 @@ def pressed(button):
     while left_win or right_win < 3:
         if button.pin.number == 14:
             left_win += 1
-            print(left_name + ' won the round!\nReady for next round?')
+            print(left_name + ' won the round! Ready for next round?')
             led.on()
         else:
             right_win += 1
-            print(right_name + ' won the round!\nReady for next round?')
+            print(right_name + ' won the round! Ready for next round?')
             led.on()
 #displays the players' total scores and ultimate
     if left_win or right_win == 3:
