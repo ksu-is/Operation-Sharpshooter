@@ -21,7 +21,7 @@ GPIO.setup(led,GPIO.OUT)
 GPIO.setup(switch1,GPIO.IN,pull_up_down=GPIO.PUD_UP)
 GPIO.setup(switch2,GPIO.IN,pull_up_down=GPIO.PUD_UP)
 
-start=time.clock()
+start = time.clock()
 
 try:
     while True:
