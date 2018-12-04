@@ -12,6 +12,6 @@ TASKS
 10) Troubleshoot code (had to combine code from class with game code) - Brianna: DONE
 11) Troubleshoot hardware issues (found faulty button) - Brianna: DONE
 12) Test code for proper application while running - Brianna: DONE
-13) Update code on Github - Drew: DONE
+13) Update code on Github - Drew: IN PROGRESS
 
 FINISHED!
