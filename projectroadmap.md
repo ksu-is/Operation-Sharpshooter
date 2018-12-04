@@ -11,7 +11,8 @@ TASKS
 9) Fix hardware to appropriate GPIOs - Drew: DONE
 10) Troubleshoot code (had to combine code from class with game code) - Brianna: DONE
 11) Troubleshoot hardware issues (found faulty button) - Brianna: DONE
-12) Test code for proper application while running - Brianna: DONE
-13) Update code on Github - Drew: IN PROGRESS
+12) Add timer - Brianna: DONE
+13) Test code for proper application while running - Brianna: DONE
+14) Update code on Github - Brianna: DONE
 
 FINISHED!
