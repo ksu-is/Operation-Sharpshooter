@@ -1,53 +1,40 @@
 #import libraries/modules
 from gpiozero import LED, Button
+import time
 from time import sleep
 from random import uniform
-import sys
+from sys import exit
 
+#assign player names
+left_name = input("Yellow Gunslinger's Name? ")
+right_name = input("Blue Gunslinger's Name? ")
 
-#assign pins to LED and buttons
-led = LED(4)
-right_button = Button(15)
-left_button = Button(14)
-
-#assign player variables
-left_name = input('Yellow Gunslingers name is: ')
-right_name = input('Blue Gunslingers name is: ')
-
-#turn on LED
-led.on()
-
-#randomized wait time for LED to flash within range 3 - 8 seconds
+#assign pins, LED, GPIOs
+GPIO.setmode(GPIO.BCM)
+light=LED(4)
+switch1 = 15
+switch2 = 14
+light.on()
 sleep(uniform(5,10))
+light.off()
+GPIO.setup(led,GPIO.OUT)
+GPIO.setup(switch1,GPIO.IN,pull_up_down=GPIO.PUD_UP)
+GPIO.setup(switch2,GPIO.IN,pull_up_down=GPIO.PUD_UP)
 
-#turn off LED
-led.off()
+start=time.clock()
 
-#identify who won via pin assignment
-def pressed(button):
-    left_win=0
-    right_win=0
-#displays round winner and adds cumulative scores
-    while left_win or right_win < 3:
-        if button.pin.number == 14:
-            left_win += 1
-            print(left_name + ' won the round! Ready for next round?')
-            led.on()
-        else:
-            right_win += 1
-            print(right_name + ' won the round! Ready for next round?')
-            led.on()
-#displays the players' total scores and ultimate
-    if left_win or right_win == 3:
-        if left_win > right_win:
-            print(left_name + "'s score is: " + left_win + "\n" + right_name + "'s score is: " + right_win + "\nThe winner is" + left_name + "!")
-        else:
-            print(left_name + "'s score is: " + left_win + "\n" + right_name + "'s score is: " + right_win + "\nThe winner is" + right_name + "!")
-    sys.exit()
-    exit()
-
-#pressed button will call pressed(button) function to determine who won
-right_button.when_pressed=pressed
-left_button.when_pressed=pressed
-
+try:
+    while True:
+        if GPIO.input(switch1) == False or GPIO.input(switch2) == False:
+            finish = time.clock()
+            speed = finish - start
+            if GPIO.input(switch1) == False:
+                print(left_name + "'s draw speed: " + str(speed) + " seconds\n" + left_name + " is the Champion!\n" right_name + " has been killed!")
+                break
+            else:
+                print(left_name + "'s draw speed: " + str(speed) + " seconds\n" + left_name + " is the Champion!\n" right_name + " has been killed!")
+                break
+finally:
+    print("GAME OVER!")
+    GPIO.cleanup()
 
